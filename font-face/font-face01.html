@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.dif{
+				background: #ccc;
+				border: 1px dashed chocolate;
+				padding: 10px;
+				white-space: pre;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 style="color: limegreen;">
+			这是@font-face的一小部分的作用。
+		</h1>
+		<p>之前，我们对网页中的内容设置字体的方式,假如我们对当前的内容设置字体为微软雅黑，而且这个字体不是针对于全局的</p>
+		<p class="dif">
+			.font{
+				font-family:"Microsoft yahei";
+			}
+		</p>
+		<p>如果这个字体不是全局的，每次用到都要写一遍都很烦。虽然说，现在Sass, Less之类东西可以让其成为变量，但是CSS的代码量依旧没有减小。其实，我们可以借助@font-face这种原生的特性来简化我们的变成成本以及减少代码量，如下：</p>
+		<p class="dif">
+			@font-face{
+				font-family:YH;
+				src:local("Microsoft yahei");
+			}
+		</p>
+		<p>接下来要使用微软雅黑的字体，就不用使用那么长的字符串啦~</p>
+		<p class="dif">
+			.font{
+				font-family:YH;
+			}
+		</p>
+	</body>
+</html>
